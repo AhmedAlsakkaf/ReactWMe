@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const AddJobs = ({ addJobSubmit }) => {
   const [title, setTitle] = useState('');
@@ -46,7 +45,7 @@ const AddJobs = ({ addJobSubmit }) => {
     <section className='bg-blue-50 min-h-screen flex items-center justify-center'>
       <div className='container max-w-2xl py-12'>
         <div className='bg-white px-8 py-10 shadow-lg rounded-lg border border-gray-200'>
-          <h2 className='text-3xl font-bold text-center text-green-700 mb-6'>Post a Job</h2>
+          <h2 className='text-3xl font-bold text-center text-blue-900 mb-6'>Post a Job</h2>
           <form onSubmit={submitForm} className='space-y-4'>
             <div>
               <label className='block text-gray-700 font-semibold mb-2'>Job Title</label>
@@ -80,7 +79,7 @@ const AddJobs = ({ addJobSubmit }) => {
               <label className='block text-gray-700 font-semibold mb-2'>Description</label>
               <textarea className='w-full p-3 border rounded-lg' rows='4' required value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
-            <h3 className='text-xl font-semibold text-green-700 mt-6'>Company Information</h3>
+            <h3 className='text-xl font-semibold text-blue-800 mt-6'>Company Information</h3>
             <div>
               <label className='block text-gray-700 font-semibold mb-2'>Company Name</label>
               <input type='text' className='w-full p-3 border rounded-lg' required value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
@@ -97,7 +96,7 @@ const AddJobs = ({ addJobSubmit }) => {
               <label className='block text-gray-700 font-semibold mb-2'>Contact Phone</label>
               <input type='tel' className='w-full p-3 border rounded-lg' value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} />
             </div>
-            <button type='submit' className='w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition'>
+            <button type='submit' className='w-full bg-gradient-to-r from-red-600 to-blue-800 hover:from-blue-900 hover:to-red-900 text-white font-bold py-3 rounded-lg transition'>
               Add Job
             </button>
           </form>

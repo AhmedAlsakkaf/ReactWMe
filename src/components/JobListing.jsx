@@ -1,48 +1,54 @@
 import React, { useState } from 'react';
-import { FaMapMarker } from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const JobListing = ({ job }) => {  // ✅ Correct Destructuring
+const JobListing = ({ job }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  if (!job) return null; // Ensure job exists before rendering
+  if (!job) return null;
 
-  let description = job.description || "No description available"; // Prevent undefined error
+  let description = job.description || "No description available";
 
   if (!showFullDescription && job.description) {
     description = description.substring(0, 100) + "...";
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md relative">
-      <div className="p-4">
+    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+      <div className="p-6">
         <div className="mb-6">
-          <div className="text-gray-600 my-2">{job.type}</div>
-          <h3 className="text-xl font-bold">{job.title}</h3>
+          <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">
+            {job.type}
+          </span>
+          <h3 className="text-xl font-bold text-gray-900 mt-2">{job.title}</h3>
         </div>
 
-        <div className="mb-5">{description}</div>
-        <button
-          onClick={() => setShowFullDescription((prevState) => !prevState)}
-          className="text-green-500 mb-5 hover:text-green-500"
-        >
-          {showFullDescription ? "Show Less" : "Show More"}
-        </button>
+        <div className="text-gray-600 mb-5">
+          {description}
+          <button
+            onClick={() => setShowFullDescription((prevState) => !prevState)}
+            className="text-blue-600 hover:text-blue-800 ml-1 font-medium transition-colors"
+          >
+            {showFullDescription ? "Show Less" : "Show More"}
+          </button>
+        </div>
 
-        <h3 className="text-green-500 mb-2">{job.salary} / Year</h3>
+        <div className="flex items-center mb-4">
+          <span className="text-red-600 font-bold">{job.salary} / Year</span>
+        </div>
 
-        <div className="border border-gray-100 mb-5"></div>
+        <div className="border-t border-gray-200 mb-5"></div>
 
-        <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="text-orange-700 mb-3">
-            <FaMapMarker className="inline text-lg mb-2 mr-3" />
-            {job.location}
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <div className="text-blue-600 mb-3 lg:mb-0 flex items-center">
+            <FaMapMarkerAlt className="mr-2 text-red-500" />
+            <span>{job.location}</span>
           </div>
           <Link
             to={`/jobs/${job.id}`}
-            className="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+            className="bg-gradient-to-r from-red-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg"
           >
-            Read More
+            View Details
           </Link>
         </div>
       </div>

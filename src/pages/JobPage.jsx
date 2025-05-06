@@ -21,13 +21,13 @@ const JobPage = ({ deleteJob }) => {
       <ToastContainer />
       <section>
         <div className='container mx-auto py-6 px-6'>
-          <Link to='/jobs' className='text-green-600 hover:text-green-700 flex items-center font-medium transition-all duration-200'>
+          <Link to='/jobs' className='text-blue-600 hover:text-blue-700 flex items-center font-medium transition-all duration-200'>
             <FaArrowLeft className='mr-2' /> Back to Job Listings
           </Link>
         </div>
       </section>
 
-      <section className='bg-green-50 py-10'>
+      <section className='bg-blue-50 py-10'>
         <div className='container mx-auto px-6'>
           <div className='grid grid-cols-1 md:grid-cols-70/30 gap-6'>
             <main>
@@ -41,9 +41,9 @@ const JobPage = ({ deleteJob }) => {
               </div>
 
               <div className='bg-white p-6 rounded-lg shadow-lg mt-6'>
-                <h3 className='text-green-700 text-lg font-semibold mb-4'>Job Description</h3>
+                <h3 className='text-blue-700 text-lg font-semibold mb-4'>Job Description</h3>
                 <p className='mb-4 text-gray-700 leading-relaxed'>{job.description}</p>
-                <h3 className='text-green-700 text-lg font-semibold mb-2'>Salary</h3>
+                <h3 className='text-blue-700 text-lg font-semibold mb-2'>Salary</h3>
                 <p className='text-gray-800 font-medium'>{job.salary} / Year</p>
               </div>
             </main>
@@ -55,22 +55,22 @@ const JobPage = ({ deleteJob }) => {
                 <p className='my-2 text-gray-600'>{job.company.description}</p>
                 <hr className='my-4' />
                 <h3 className='text-lg font-medium text-gray-800'>Contact Email:</h3>
-                <p className='my-2 bg-green-100 p-2 rounded-lg font-medium'>{job.company.contactEmail}</p>
+                <p className='my-2 bg-blue-100 p-2 rounded-lg font-medium'>{job.company.contactEmail}</p>
                 <h3 className='text-lg font-medium text-gray-800'>Contact Phone:</h3>
-                <p className='my-2 bg-green-100 p-2 rounded-lg font-medium'>{job.company.contactPhone}</p>
+                <p className='my-2 bg-blue-100 p-2 rounded-lg font-medium'>{job.company.contactPhone}</p>
               </div>
 
               <div className='bg-white p-6 rounded-lg shadow-lg mt-6'>
                 <h3 className='text-xl font-semibold mb-6 text-gray-800'>Manage Job</h3>
                 <Link
                   to={`/edit-job/${job.id}`}
-                  className='bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-lg w-full block transition-all duration-200 shadow-md hover:shadow-lg'
+                  className='bg-blue-900 hover:bg-blue-950  text-white text-center font-bold py-2 px-4 rounded-lg w-full block transition-all duration-200 shadow-md hover:shadow-lg'
                 >
                   Edit Job
                 </Link>
                 <button
                   onClick={() => onDeleteClick(job.id)}
-                  className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg w-full block transition-all duration-200 shadow-md hover:shadow-lg mt-4'
+                  className='bg-red-900 hover:bg-red-950 text-white font-bold py-2 px-4 rounded-lg w-full block transition-all duration-200 shadow-md hover:shadow-lg mt-4'
                 >
                   Delete Job
                 </button>

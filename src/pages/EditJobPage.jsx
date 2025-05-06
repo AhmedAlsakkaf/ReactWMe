@@ -45,7 +45,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
     <section className='bg-blue-50 min-h-screen flex items-center justify-center'>
       <div className='container max-w-2xl py-12'>
         <div className='bg-white px-8 py-10 shadow-lg rounded-lg border border-gray-200'>
-          <h2 className='text-3xl font-bold text-center text-green-700 mb-6'>Edit Job</h2>
+          <h2 className='text-3xl font-bold text-center text-blue-900 mb-6'>Edit Job</h2>
           <form onSubmit={submitForm} className='space-y-4'>
             <div>
               <label className='block text-gray-700 font-semibold mb-2'>Job Title</label>
@@ -106,7 +106,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
               ></textarea>
             </div>
 
-            <h3 className='text-xl font-semibold text-green-700 mt-6'>Company Information</h3>
+            <h3 className='text-xl font-semibold text-blue-900 mt-6'>Company Information</h3>
             <div>
               <label className='block text-gray-700 font-semibold mb-2'>Company Name</label>
               <input
@@ -148,7 +148,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
             </div>
             <button
               type='submit'
-              className='w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition'
+              className='w-full bg-gradient-to-r from-red-600 to-blue-800 hover:from-blue-900 hover:to-red-900 text-white font-bold py-3 rounded-lg transition'
             >
               Update Job
             </button>

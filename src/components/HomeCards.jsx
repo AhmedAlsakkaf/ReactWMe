@@ -16,7 +16,7 @@ const HomeCards = () => {
           </p>
           <Link
             to="/jobs"
-            class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
+            class="inline-block bg-blue-800 text-white rounded-lg px-4 py-2 hover:bg-blue-900"
           >
             Browse Jobs
           </Link>
@@ -30,7 +30,7 @@ const HomeCards = () => {
           </p>
           <Link
             to="/add-job"
-            class="inline-block bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600"
+            class="inline-block bg-red-700 text-white rounded-lg px-4 py-2 hover:bg-red-800"
           >
             Add Job
           </Link>
