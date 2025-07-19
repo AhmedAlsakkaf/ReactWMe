@@ -17,11 +17,10 @@ const EditJobPage = ({ updateJobSubmit }) => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-
+  
     const updatedJob = {
-      id,
       title,
       type,
       location,
@@ -34,12 +33,26 @@ const EditJobPage = ({ updateJobSubmit }) => {
         contactPhone,
       },
     };
-
-    updateJobSubmit(updatedJob);
-
-    toast.success('Job Updated Successfully');
-    navigate(`/jobs/${id}`);
+  
+    try {
+      const res = await fetch(`/api/jobs/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedJob),
+      });
+  
+      if (!res.ok) throw new Error('Failed to update job');
+  
+      toast.success('Job Updated Successfully');
+      navigate(`/jobs/${id}`);
+    } catch (error) {
+      console.error(error);
+      toast.error('Failed to update job');
+    }
   };
+  
 
   return (
     <section className='bg-blue-50 min-h-screen flex items-center justify-center'>
